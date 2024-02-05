@@ -21,7 +21,7 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       appBar: AppBar(title: Text(widget.logoName)),
       body: Padding(
-        padding: const EdgeInsets.only(bottom: 40.0),
+        padding: const EdgeInsets.only(left: 40, right: 40, bottom: 40.0),
         child: GestureDetector(
           onTap: () {
             Navigator.pop(context);
