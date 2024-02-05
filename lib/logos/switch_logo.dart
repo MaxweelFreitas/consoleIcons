@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'classes.dart';
+import '../classes.dart';
 
 class SwitchLogo extends StatelessWidget {
   final Color? color;

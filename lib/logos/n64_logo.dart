@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'classes.dart';
+import '../classes.dart';
 
 class N64Logo extends StatelessWidget {
   final double size;

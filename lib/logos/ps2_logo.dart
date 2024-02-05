@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'classes.dart';
+import '../classes.dart';
 
 class Ps2Logo extends StatelessWidget {
   final Color? color;
@@ -55,34 +55,48 @@ class Ps2LogoPainter extends CustomPainter {
       );
     }
 
-    final List<List<double>> p = [
-      [00.00, 58.63], [00.00, 49.34], [29.98, 49.34], [29.98, 42.59], //
-      [00.00, 42.59], [00.00, 41.37], [31.08, 41.37], [31.08, 50.55],
-      [01.22, 50.55], [01.22, 58.63], [00.00, 58.63],
-    ];
-
-    final List<List<double>> s = [
-      [31.08, 58.63], [31.08, 57.41], [47.01, 57.41], [47.01, 41.37], //
-      [64.16, 41.37], [64.16, 42.59], [48.34, 42.59], [48.34, 58.63],
-      [31.08, 58.63],
-    ];
-
-    final List<List<double>> two = [
-      [68.80, 58.63], [68.80, 49.34], [98.78, 49.34], [98.78, 42.59], //
-      [68.80, 42.59], [68.80, 41.37], [100.0, 41.37], [100.0, 50.55],
-      [70.13, 50.55], [70.13, 57.41], [100.0, 57.41], [100.0, 58.63],
-      [68.80, 58.63],
-    ];
-
-    final pPath = Path()..addPolygon(genOffsetList(p, dim), true);
-    final sPath = Path()..addPolygon(genOffsetList(s, dim), true);
-    final twoPath = Path()..addPolygon(genOffsetList(two, dim), true);
-
-    canvas.drawPath(pPath, paint);
-    canvas.drawPath(sPath, paint);
-    canvas.drawPath(twoPath, paint);
+    _drawP(canvas, dim, paint);
+    _drawS(canvas, dim, paint);
+    _draw2(canvas, dim, paint);
   }
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+void _drawP(Canvas canvas, DimensionConvert dim, Paint paint) {
+  final List<List<double>> p = [
+    [00.00, 58.63], [00.00, 49.34], [29.98, 49.34], [29.98, 42.59], //
+    [00.00, 42.59], [00.00, 41.37], [31.08, 41.37], [31.08, 50.55],
+    [01.22, 50.55], [01.22, 58.63], [00.00, 58.63],
+  ];
+
+  final pPath = Path()..addPolygon(genOffsetList(p, dim), true);
+
+  canvas.drawPath(pPath, paint);
+}
+
+void _drawS(Canvas canvas, DimensionConvert dim, Paint paint) {
+  final List<List<double>> s = [
+    [31.08, 58.63], [31.08, 57.41], [47.01, 57.41], [47.01, 41.37], //
+    [64.16, 41.37], [64.16, 42.59], [48.34, 42.59], [48.34, 58.63],
+    [31.08, 58.63],
+  ];
+
+  final sPath = Path()..addPolygon(genOffsetList(s, dim), true);
+
+  canvas.drawPath(sPath, paint);
+}
+
+void _draw2(Canvas canvas, DimensionConvert dim, Paint paint) {
+  final List<List<double>> two = [
+    [68.80, 58.63], [68.80, 49.34], [98.78, 49.34], [98.78, 42.59], //
+    [68.80, 42.59], [68.80, 41.37], [100.0, 41.37], [100.0, 50.55],
+    [70.13, 50.55], [70.13, 57.41], [100.0, 57.41], [100.0, 58.63],
+    [68.80, 58.63],
+  ];
+
+  final twoPath = Path()..addPolygon(genOffsetList(two, dim), true);
+
+  canvas.drawPath(twoPath, paint);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'classes.dart';
+import '../classes.dart';
 
 class SegaGenesisLogo extends StatelessWidget {
   final double size;

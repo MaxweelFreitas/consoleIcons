@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'classes.dart';
+import '../classes.dart';
 
 class PsVitaLogo extends StatelessWidget {
   final double size;
@@ -34,17 +34,17 @@ class _PsVitaLogoPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     DimensionConvert dim = DimensionConvert(size: size);
 
-    const blue = Color(0xff000000);
+    const black = Color(0xff000000);
 
-    late final bluePaint = Paint();
+    late final blackPaint = Paint();
 
     if (color != null) {
-      bluePaint.color = color!;
+      blackPaint.color = color!;
     } else {
-      bluePaint.color = blue;
+      blackPaint.color = black;
     }
 
-    _drawP(canvas, dim, bluePaint);
+    _drawP(canvas, dim, blackPaint);
   }
 
   @override
@@ -53,7 +53,7 @@ class _PsVitaLogoPainter extends CustomPainter {
   }
 }
 
-void _drawP(Canvas canvas, DimensionConvert dim, Paint contourPaint) {
+void _drawP(Canvas canvas, DimensionConvert dim, Paint blackPaint) {
   final pRecArc01 = Rect.fromLTRB(
     dim.w(00.00), dim.h(48.67), dim.w(08.17), dim.h(57.31), //
   );
@@ -128,5 +128,11 @@ void _drawP(Canvas canvas, DimensionConvert dim, Paint contourPaint) {
       //
       ;
 
-  canvas.drawPath(contourPath, contourPaint);
+  canvas.drawPath(contourPath, blackPaint);
 }
+
+void _drawS(Canvas canvas, DimensionConvert dim, Paint blackPaint) {}
+void _drawV(Canvas canvas, DimensionConvert dim, Paint blackPaint) {}
+void _drawI(Canvas canvas, DimensionConvert dim, Paint blackPaint) {}
+void _drawT(Canvas canvas, DimensionConvert dim, Paint blackPaint) {}
+void _drawA(Canvas canvas, DimensionConvert dim, Paint blackPaint) {}

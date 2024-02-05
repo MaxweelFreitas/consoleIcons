@@ -1,6 +1,26 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flutter/widgets.dart';
+
+import 'logos/android_logo.dart';
+import 'logos/game_cube_logo.dart';
+import 'logos/mame_logo.dart';
+import 'logos/n64_logo.dart';
+import 'logos/neo_geo_cd_logo.dart';
+import 'logos/neo_geo_logo.dart';
+import 'logos/neo_geo_pocket_logo.dart';
+import 'logos/nes_controll_logo.dart';
+import 'logos/nintendo_logo.dart';
+import 'logos/ps2_logo.dart';
+import 'logos/ps_one_logo.dart';
+import 'logos/ps_vita_logo.dart';
+import 'logos/psp_logo.dart';
+import 'logos/retroarch_logo.dart';
+import 'logos/sega_genesis_logo.dart';
+import 'logos/sega_logo.dart';
+import 'logos/switch_logo.dart';
+
 class DimensionConvert {
   final Size size;
 
@@ -18,6 +38,91 @@ class DimensionConvert {
     return result;
   }
 }
+
+class BrandLogo {
+  final Widget logo;
+  final String logoName;
+
+  const BrandLogo({
+    required this.logo,
+    required this.logoName,
+  });
+}
+
+const logo = <BrandLogo>[
+  BrandLogo(
+    logo: AndroidLogo(),
+    logoName: 'Android',
+  ),
+  BrandLogo(
+    logo: GameCubeLogo(),
+    logoName: 'Game Cube',
+  ),
+  BrandLogo(
+    logo: MameLogo(),
+    logoName: 'Mame',
+  ),
+  BrandLogo(
+    logo: N64Logo(),
+    logoName: 'Nintendo 64',
+  ),
+  BrandLogo(
+    logo: NeoGeoCDLogo(),
+    logoName: 'NeoGeo CD',
+  ),
+  BrandLogo(
+    logo: NeoGeoLogo(),
+    logoName: 'NeoGeo',
+  ),
+  BrandLogo(
+    logo: NeoGeoPocketLogo(color: Color(0xffE81A2E)),
+    logoName: 'NeoGeo Pocket',
+  ),
+  BrandLogo(
+    logo: NeoGeoPocketLogo(),
+    logoName: 'NeoGeo Pocket color',
+  ),
+  BrandLogo(
+    logo: NesControllLogo(),
+    logoName: 'Nes',
+  ),
+  BrandLogo(
+    logo: NintendoLogo(),
+    logoName: 'Nes',
+  ),
+  BrandLogo(
+    logo: PsOneLogo(),
+    logoName: 'Ps One',
+  ),
+  BrandLogo(
+    logo: PsVitaLogo(),
+    logoName: 'Ps Vita',
+  ),
+  BrandLogo(
+    logo: Ps2Logo(),
+    logoName: 'Ps2',
+  ),
+  BrandLogo(
+    logo: PspLogo(),
+    logoName: 'Ps2',
+  ),
+  BrandLogo(
+    logo: RetroArchLogo(),
+    logoName: 'RetroArchLogo',
+  ),
+  BrandLogo(
+    logo: SegaGenesisLogo(),
+    logoName: 'RetroArchLogo',
+  ),
+  BrandLogo(
+    logo: SegaLogo(),
+    logoName: 'RetroArchLogo',
+  ),
+  BrandLogo(
+    logo: SwitchLogo(),
+    logoName: 'RetroArchLogo',
+  ),
+];
 
 /// first order function that converts degress to radians
 double degreesToRadian(double value) => value * pi / 180;
